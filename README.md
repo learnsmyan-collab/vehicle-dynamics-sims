@@ -48,7 +48,7 @@ A professional-grade MATLAB simulation framework designed to model Grand Prix ra
 ## Visual Outputs & Asset Generation
 
 ### Tactical Crossover Analysis
-![F1 Strategy Crossover](outputs/f1_strategy.png)
+![F1 Strategy Crossover](outputs/f1_stint_strategy.png)
 
 ---
 
