@@ -34,7 +34,6 @@ $$v_{i+1} = v_i + \left(\frac{F_{net}}{m}\right) \cdot \Delta t$$
 
 ## Repository Structure
 
-```text
 vehicle-dynamics-sims/
 │
 ├── src/
@@ -42,3 +41,25 @@ vehicle-dynamics-sims/
 ├── outputs/
 
 └── README.md
+
+F1 Race Strategy & Vehicle Dynamics Simulation Suite
+
+A professional-grade MATLAB simulation framework designed to model Grand Prix race strategy, tactical pit windows, and stint-length performance trade-offs under varying track conditions.
+## Visual Outputs & Asset Generation
+
+### Tactical Crossover Analysis
+![F1 Strategy Crossover](outputs/f1_strategy.png)
+
+---
+
+## Repository Structure
+
+```text
+f1-strat-optimizers/
+│
+├── src/
+│   ├── F1_Strategy_Sim.m           # Tactical live-race decision engine (SC/VSC & compound wear)
+│   └── Stint_Fuel_Tyre_Optimizer.m # Stint evolution model (Fuel-mass vs. non-linear tyre cliff)
+├── outputs/
+└── README.md
+
