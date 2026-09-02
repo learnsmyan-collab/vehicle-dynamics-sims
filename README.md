@@ -23,15 +23,12 @@ Velocity updates iteratively using a standard forward Euler step:
 
 $$v_{i+1} = v_i + \left(\frac{F_{net}}{m}\right) \cdot \Delta t$$
 
-% Display the exported images in MATLAB
-figure;
-imshow('outputs/vehicle_acceleration.png');
-title('Vehicle Acceleration Profile');
 
-figure;
-imshow('outputs/aero_sensitivity.png');
-title('Aerodynamic Sensitivity Analysis');
+### 1. Velocity Profile Across Aero Configurations
+![Vehicle Acceleration Profile](outputs/vehicle_acceleration.png)
 
+### 2. Aerodynamic Efficiency Sensitivity Analysis
+![Aero Sensitivity Result](outputs/aero_sensitivity.png)
 
 ---
 
