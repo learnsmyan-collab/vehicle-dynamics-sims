@@ -10,7 +10,7 @@ A MATLAB simulation framework modeling longitudinal vehicle acceleration under r
 
 ### 2. Aerodynamic Efficiency Sensitivity Analysis
 ![Aero Sensitivity Result](outputs/aero_sensitivity.png)
-```text
+
 vehicle-dynamics-sims/
 │
 ├── src/
