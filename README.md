@@ -5,10 +5,11 @@ A MATLAB simulation framework modeling longitudinal vehicle acceleration under r
 ---
 
 ## 🚀 Repository Architecture
-│   ├── vehicle_acceleration.png    # 10-second velocity profile across Cd variants
-│   └── aero_sensitivity.png        # Final velocity vs. Drag Coefficient curve
-└── README.md
+### 1. Velocity Profile Across Aero Configurations
+![Vehicle Acceleration Profile](outputs/vehicle_acceleration.png)
 
+### 2. Aerodynamic Efficiency Sensitivity Analysis
+![Aero Sensitivity Result](outputs/aero_sensitivity.png)
 ```text
 vehicle-dynamics-sims/
 │
