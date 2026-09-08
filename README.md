@@ -1,65 +1,41 @@
-# Longitudinal Vehicle Performance & Aero Sensitivity Engine
+# Vehicle Dynamics & F1 Race Strategy Simulation Suite
 
-A MATLAB simulation framework I built to model straight-line vehicle acceleration under realistic physical constraints—specifically handling tire grip limits, dynamic power curves, and aerodynamic drag, all while running a drag coefficient ($C_d$) sensitivity sweep.
-
----
-
-## How It Works
-
-Instead of assuming constant acceleration, the model calculates a few moving parts at every time step:
-* **Tire Grip:** Clamps the maximum push using a high-grip friction coefficient ($\mu = 1.6$).
-* **Power Limits:** Shifts from a controlled launch phase into a standard power-limited curve ($F = P / v$) as speed builds up.
-* **Aero Sweep:** Tests $C_d$ values from $0.6$ to $1.2$ to map out how much drag kills terminal velocity.
+An advanced MATLAB simulation framework designed to model longitudinal vehicle acceleration under physical grip/power constraints, execute aerodynamic drag sensitivity sweeps, and optimize Grand Prix race strategy and tactical pit windows.
 
 ---
 
-## The Math Simplified
+## 🚀 Visual Outputs & System Dashboards
 
-At any given point, the net force ($F_{net}$) comes down to whatever the tires or engine can give minus the aerodynamic drag ($F_d$):
-
-$$F_{net} = \min\left(\frac{P_{max}}{v}, \mu \cdot m \cdot g\right) - \left(0.5 \cdot \rho \cdot v^2 \cdot C_d \cdot A\right)$$
-
-Velocity updates iteratively using a standard forward Euler step:
-
-$$v_{i+1} = v_i + \left(\frac{F_{net}}{m}\right) \cdot \Delta t$$
-
-
-### 1. Velocity Profile Across Aero Configurations
+### 1. Longitudinal Vehicle Acceleration & Aero Sensitivity (`vehicle_performance_sim.m`)
+Evaluates straight-line acceleration under tire grip limits ($\mu = 1.6$), power curves ($F = P / v$), and aerodynamic drag coefficient ($C_d$) sweeps from $0.6$ to $1.2$.
 ![Vehicle Acceleration Profile](outputs/vehicle_acceleration.png)
-
-### 2. Aerodynamic Efficiency Sensitivity Analysis
 ![Aero Sensitivity Result](outputs/aero_sensitivity.png)
 
----
-
-## Repository Structure
-
-vehicle-dynamics-sims/
-│
-├── src/
-│   └── vehicle_performance_sim.m   # Core simulation & sensitivity analysis script
-├── outputs/
-
-└── README.md
-
-F1 Race Strategy & Vehicle Dynamics Simulation Suite
-
-A professional-grade MATLAB simulation framework designed to model Grand Prix race strategy, tactical pit windows, and stint-length performance trade-offs under varying track conditions.
-## Visual Outputs & Asset Generation
-
-### Tactical Crossover Analysis
+### 2. Tactical F1 Stint & Crossover Strategy (`F1_Strategy_Sim.m`)
+Models live-race decision making, safety car phases, fuel-mass penalties, and non-linear tire degradation cliffs.
 ![F1 Strategy Crossover](outputs/f1_stint_strategy.png)
 
 ---
 
-## Repository Structure
+## 📐 Mathematical Foundations & Governing Equations
+
+### Net Force & Forward Euler Integration
+At any given point, the net force ($F_{net}$) balances tire/engine limits against aerodynamic drag:
+$$F_{net} = \min\left(\frac{P_{max}}{v}, \mu \cdot m \cdot g\right) - \left(0.5 \cdot \rho \cdot v^2 \cdot C_d \cdot A\right)$$
+
+Velocity updates iteratively using a standard forward Euler step:
+$$v_{i+1} = v_i + \left(\frac{F_{net}}{m}\right) \cdot \Delta t$$
+
+---
+
+## 📂 Repository Architecture
 
 ```text
-f1-strat-optimizers/
-│
+vehicle-dynamics-sims/
 ├── src/
-│   ├── F1_Strategy_Sim.m           # Tactical live-race decision engine (SC/VSC & compound wear)
-│   └── Stint_Fuel_Tyre_Optimizer.m # Stint evolution model (Fuel-mass vs. non-linear tyre cliff)
+│   ├── vehicle_performance_sim.m     # Longitudinal vehicle acceleration & Cd sensitivity
+│   ├── F1_Strategy_Sim.m             # Tactical live-race decision engine (SC/VSC & wear)
+│   └── Stint_Fuel_Tyre_Optimizer.m   # Fuel-mass vs. non-linear tire cliff evolution model
 ├── outputs/
 └── README.md
 
